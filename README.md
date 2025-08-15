@@ -1,126 +1,47 @@
-# Forest Cover Type Classification
+# 🌲 Forest Cover Type Classification
 
-This project predicts the forest cover type (categorical class) from cartographic variables such as elevation, aspect, slope, soil type, and wilderness area.
-It uses machine learning techniques to classify forest types based on the UCI Machine Learning dataset provided by the US Forest Service.
+This project predicts the forest cover type from cartographic variables such as elevation, slope, soil type, and wilderness area.  
+It uses machine learning models to classify forest cover into one of seven types based on data from the UCI Covertype dataset.
 
-# Project Overview
+## 📌 Overview
+- Goal: Build an accurate model to classify forest cover type from environmental features.
+- Dataset: UCI Covertype (~581k rows, 54 features, 7 cover types).
+- Approach: Data preprocessing, EDA, model training, and explainability using SHAP.
+- Best Model: XGBoost classifier with high accuracy.
 
-The aim is to build an accurate classifier that can predict forest cover type from environmental features. This project includes:
+---
 
-Data loading & exploration
+## 📂 Dataset
+- Source: [UCI Machine Learning Repository - Covertype Dataset](https://archive.ics.uci.edu/ml/datasets/covertype)
+- Target Variable: `Cover_Type` (values 1–7)
+- Features: Elevation, Aspect, Slope, Horizontal/Vertical Distances, Soil Type, Wilderness Area, etc.
 
-Data preprocessing
+---
 
-Exploratory Data Analysis (EDA) with visualizations
+## 🛠️ Technologies Used
+- Languages: Python
+- Libraries: 
+  - Data: `pandas`, `numpy`
+  - Visualization: `matplotlib`, `seaborn`
+  - Machine Learning: `scikit-learn`, `xgboost`
+  - Explainability: `shap`
+  - Utilities: `joblib`
 
-Model training and evaluation using different algorithms
+---
 
-Explainability using SHAP
+## 🚀 Project Workflow
+1. Imports & Constants – Load libraries and set parameters.
+2. Data Loading – Download and read dataset into DataFrame.
+3. Data Inspection – Check structure, types, and missing values.
+4. Exploratory Data Analysis (EDA) – Visualize class distribution, correlations, and feature impacts.
+5. Preprocessing – Train-test split, scaling, and encoding.
+6. Model Training – Compare Logistic Regression, Random Forest, and XGBoost.
+7. Evaluation – Accuracy, Precision, Recall, F1-score.
+8. Explainability – SHAP analysis to understand feature importance.
 
-Dataset
+---
 
-Source: UCI Machine Learning Repository - Covertype Dataset
-
-Size: ~581,000 instances, 54 features
-
-Target: Cover_Type (1–7, representing forest categories)
-
-Features: Elevation, Aspect, Slope, Horizontal/Vertical Distances, Soil Type, Wilderness Area, etc.
-
-Technologies & Libraries Used
-
-Python
-
-Pandas, NumPy – Data manipulation
-
-Matplotlib, Seaborn – Visualization
-
-scikit-learn – Machine learning models, preprocessing, evaluation
-
-XGBoost – Gradient boosting classifier
-
-SHAP – Model explainability
-
-Joblib – Model saving/loading
-
-Project Workflow
-Step 1 — Imports and Constants
-
-Load required libraries and define dataset paths/constants.
-
-Step 2 — Download & Load Dataset
-
-Download compressed dataset (.gz format)
-
-Load it into a Pandas DataFrame with column names
-
-Step 3 — Quick Inspection & Cleaning
-
-Check data types, missing values, and class distribution
-
-Handle missing values if present
-
-Step 4 — Exploratory Data Analysis (EDA)
-
-Class distribution plot
-
-Feature histograms
-
-Correlation analysis
-
-Visual inspection of elevation, slope, and soil type impacts
-
-Step 5 — Preprocessing
-
-Train-test split
-
-Optional scaling/normalization
-
-One-hot encoding for categorical variables
-
-Step 6 — Model Training & Evaluation
-
-Train multiple classifiers (Logistic Regression, Random Forest, XGBoost)
-
-Evaluate using Accuracy, Precision, Recall, F1-score
-
-Compare models
-
-Step 7 — Explainability
-
-Use SHAP values to explain feature contributions
-
-Visualize important features for each class
-
-How to Run
-1. Clone the repository
-git clone https://github.com/<your-username>/forest-cover-classification.git
-cd forest-cover-classification
-
-2. Install dependencies
-pip install -r requirements.txt
-
-
-Or in Google Colab:
-
-!pip install xgboost joblib shap
-
-3. Run the notebook
-
-Open in Jupyter Notebook or Google Colab:
-
-jupyter notebook Forest_Cover_Type_Classification.ipynb
-
-Results
-
-Best performing model: XGBoost with high accuracy and interpretability using SHAP
-
-Key influencing features: Elevation, Soil Type, Horizontal Distance to Hydrology
-
-Author
-
-Malik Jamal Mehboob
-
-GitHub: jamal-awan56
-
-LinkedIn: Jamal Awan
+## 📊 Results
+- Best model: XGBoost
+- Top features: Elevation, Soil Type, Horizontal Distance to Hydrology
+- Key insight: Elevation and soil type have the strongest influence on forest cover classification.
